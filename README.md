@@ -7,7 +7,7 @@ Welcome to my portfolio! I'm a second-year Computer Science student at King's Co
 
 ## 🎓 About Me
 
-I'm currently pursuing a Bachelor's degree in Computer Science at King's College London, maintaining a first-class average of 80%. My academic journey is driven by a deep interest in Artificial Intelligence and Machine Learning, where I explore how intelligent systems can solve complex problems and create impactful solutions.
+I'm currently pursuing a Bachelor's degree in Computer Science at King's College London, maintaining a first-class average of 77%. My academic journey is driven by a deep interest in Artificial Intelligence and Machine Learning, where I explore how intelligent systems can solve complex problems and create impactful solutions.
 
 I have hands-on experience working with languages like Python, Java, and SQL, and enjoy building projects that combine technical skills with creativity. I'm particularly drawn to Data Science, from extracting insights from data to training predictive models, and I'm eager to pursue a professional career in AI and Data Science.
 
