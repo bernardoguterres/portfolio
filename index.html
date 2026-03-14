@@ -211,6 +211,7 @@
             width: 100%;
             height: 100%;
             border-radius: 1rem;
+            border: 1px solid var(--border);
         }
 
         /* Section Headers */
@@ -1039,6 +1040,25 @@
                 if (Math.abs(this.x - this.baseX) > maxDrift || Math.abs(this.y - this.baseY) > maxDrift) {
                     this.vx *= -1;
                     this.vy *= -1;
+                }
+
+                // Keep nodes away from canvas edges (with padding for labels)
+                const padding = 30;
+                if (this.x < padding) {
+                    this.x = padding;
+                    this.vx = Math.abs(this.vx);
+                }
+                if (this.x > width - padding) {
+                    this.x = width - padding;
+                    this.vx = -Math.abs(this.vx);
+                }
+                if (this.y < padding) {
+                    this.y = padding;
+                    this.vy = Math.abs(this.vy);
+                }
+                if (this.y > height - padding) {
+                    this.y = height - padding;
+                    this.vy = -Math.abs(this.vy);
                 }
 
                 // Mouse interaction
