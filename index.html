@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bernardo Guterres - Machine Learning Engineer & Data Scientist. Building intelligent systems, predictive products, and production-grade software.">
+    <meta name="keywords" content="Machine Learning, Data Science, AI, Software Engineering, Algorithmic Trading, Computer Vision, Python, React">
+    <meta name="author" content="Bernardo Guterres">
+    <title>Bernardo Guterres | ML Engineer & Data Scientist</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-tertiary: #1a1a1a;
+            --text-primary: #fafafa;
+            --text-secondary: #a1a1a1;
+            --text-tertiary: #737373;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --border: #262626;
+            --success: #10b981;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 5rem;
+            opacity: 1;
+            transform: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .title {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.875rem 1.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+            border-color: var(--text-tertiary);
+        }
+
+        /* Canvas */
+        .hero-visual {
+            position: relative;
+            height: 500px;
+        }
+
+        #networkCanvas {
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+        }
+
+        /* About */
+        #about {
+            background: var(--bg-secondary);
+        }
+
+        .about-content {
+            max-width: 800px;
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        /* Experience */
+        .experience-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .experience-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .experience-card:hover {
+            border-color: var(--text-tertiary);
+        }
+
+        .experience-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .experience-meta .company {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .experience-card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .experience-card li {
+            color: var(--text-secondary);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Projects */
+        #projects {
+            background: var(--bg-secondary);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-summary {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .project-description {
+            color: var(--text-tertiary);
+            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .project-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tech-tag {
+            padding: 0.375rem 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.375rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .project-result {
+            color: var(--success);
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--success);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .project-link:hover {
+            color: var(--accent-hover);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Education */
+        #education {
+            background: var(--bg-secondary);
+        }
+
+        .education-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .education-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+        }
+
+        .education-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-meta {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .education-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .education-details strong {
+            color: var(--text-primary);
+        }
+
+        .certifications {
+            margin-top: 2rem;
+        }
+
+        .certifications h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .cert-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 1rem 1.25rem;
+        }
+
+        .cert-item strong {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .cert-item small {
+            color: var(--text-tertiary);
+            font-size: 0.85rem;
+        }
+
+        /* Contact */
+        .contact-intro {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 400px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .contact-link:hover {
+            border-color: var(--accent);
+            background: var(--bg-tertiary);
+        }
+
+        .contact-link strong {
+            font-weight: 600;
+        }
+
+        .contact-link span {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--text-tertiary);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                padding: 1rem 2rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text .title {
+                font-size: 1.25rem;
+            }
+
+            .hero-text .subtitle {
+                font-size: 1rem;
+            }
+
+            .hero-visual {
+                height: 300px;
+                display: none; /* Hide canvas on mobile for cleaner experience */
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">BG</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Bernardo Guterres</h1>
+                    <p class="title">Machine Learning Engineer & Data Scientist</p>
+                    <p class="subtitle">Building intelligent systems, predictive products, and production-grade software.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="#" class="btn btn-secondary">Download CV</a>
+                        <a href="https://github.com/bernardoguterres" target="_blank" class="btn btn-secondary">GitHub →</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <canvas id="networkCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About</h2>
+            </div>
+            <div class="about-content">
+                <p>Third-year Computer Science student at King's College London (First-Class, 80% average), focused on machine learning, AI systems, and full-stack engineering. I build things that work in production — from enterprise AI platforms to quantitative trading systems, predictive models, and data pipelines. Outside of code, I compete in rock climbing and tennis.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experience</h2>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Software Engineer Intern</h3>
+                        <div class="experience-meta">
+                            <span class="company">Link Consulting</span>
+                            <span>•</span>
+                            <span>June 2025 – August 2025</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Architected LACE (Legacy Application Code Enhancement) — an enterprise AI platform for Oracle PL/SQL modernisation using Next.js, React, and the Claude Sonnet API</li>
+                        <li>Built a dual-architecture system with smart context loading and MCP server integration, delivering 10 specialised analysis commands for database migration workflows</li>
+                        <li>Engineered real-time streaming with SSE responses, drag-and-drop file processing, and interactive Mermaid diagram generation for data lineage visualisation</li>
+                        <li>Delivered a production-ready solution supporting enterprise-scale PL/SQL codebases with comprehensive error handling and export capabilities</li>
+                    </ul>
+                </div>
+
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>Analyst</h3>
+                        <div class="experience-meta">
+                            <span class="company">Minds of Tomorrow</span>
+                            <span>•</span>
+                            <span>June 2025 – Present</span>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Author bi-weekly analytical articles on technology and industry trends</li>
+                        <li>Contribute to a multidisciplinary platform connecting students across professional fields</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- AlphaLab -->
+                <div class="project-card" data-project="AlphaLab">
+                    <h3>AlphaLab</h3>
+                    <p class="project-summary">Desktop application for backtesting algorithmic trading strategies with institutional-quality execution simulation.</p>
+                    <p class="project-description">Provides production-grade backtesting with realistic execution modeling — next-bar execution, configurable slippage and commissions, and no look-ahead bias. Includes 50+ technical indicators, 5 built-in strategies, 30+ performance metrics, Monte Carlo simulation, walk-forward validation, and portfolio optimisation. Exports strategies directly to AlphaLive for live deployment.</p>
+                    <div class="project-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tauri</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                    </div>
+                    <div class="project-result">120+ passing tests, 9 REST API endpoints, 5 strategies, packaged as native desktop app (macOS .dmg, 5.5MB)</div>
+                    <a href="https://github.com/bernardoguterres" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+
+                <!-- AlphaLive -->
+                <div class="project-card" data-project="AlphaLive">
+                    <h3>AlphaLive</h3>
+                    <p class="project-summary">24/7 live trading execution engine that deploys strategies exported from AlphaLab into automated market operation.</p>
+                    <p class="project-description">Production trading bot deployed on Railway. Replicates AlphaLab strategy logic exactly — supporting MA Crossover, RSI Mean Reversion, Momentum Breakout, Bollinger Breakout, and VWAP Reversion. Includes multi-layer risk management (stop loss, take profit, trailing stop, daily loss limits, circuit breakers), real-time Alpaca Markets execution, Telegram trade alerts, and multi-strategy parallel execution.</p>
+                    <div class="project-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Alpaca Markets API</span>
+                        <span class="tech-tag">Telegram Bot API</span>
+                        <span class="tech-tag">Railway</span>
+                    </div>
+                    <div class="project-result">Full risk management system with circuit breakers, position reconciliation, kill switch, and graceful degradation</div>
+                    <a href="https://github.com/bernardoguterres" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+
+                <!-- NBA MVP Predictor -->
+                <div class="project-card" data-project="NBA">
+                    <h3>NBA MVP Predictor</h3>
+                    <p class="project-summary">Machine learning pipeline forecasting NBA MVP vote shares from 33+ years of historical data using a time-aware rolling backtest.</p>
+                    <p class="project-description">Treats MVP prediction as a ranking problem, not regression. Engineers 52 features across 7 categories including era-normalised ratios, league-relative z-scores, team success signals, player availability, and narrative/history features — mirroring actual voter behaviour patterns. Trains Ridge Regression, Random Forest, and XGBoost models with strict no-data-leakage backtesting. Includes SHAP analysis to explain predictions.</p>
+                    <div class="project-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">XGBoost</span>
+                        <span class="tech-tag">SHAP</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">NumPy</span>
+                    </div>
+                    <div class="project-result">52 engineered features, 71-test suite with CI, SHAP explainability, time-aware backtest across 30+ seasons</div>
+                    <a href="https://github.com/bernardoguterres" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+
+                <!-- Lisbon House Price Predictor -->
+                <div class="project-card">
+                    <h3>Lisbon House Price Predictor</h3>
+                    <p class="project-summary">Full-stack web app estimating Lisbon property prices from location and listing features.</p>
+                    <div class="project-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Scikit-learn</span>
+                    </div>
+                    <div class="project-result">End-to-end ML product from data pipeline to deployed React frontend</div>
+                    <a href="https://github.com/bernardoguterres" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>ML / Data</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">SHAP</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Predictive Modelling</span>
+                        <span class="skill-tag">Feature Engineering</span>
+                        <span class="skill-tag">Backtesting</span>
+                        <span class="skill-tag">Monte Carlo Simulation</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Vite</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Recharts</span>
+                        <span class="skill-tag">shadcn/ui</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">SSE</span>
+                        <span class="skill-tag">Pydantic</span>
+                        <span class="skill-tag">Zustand</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Quant / Trading</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Algorithmic Trading</span>
+                        <span class="skill-tag">Strategy Backtesting</span>
+                        <span class="skill-tag">Risk Management</span>
+                        <span class="skill-tag">Alpaca Markets API</span>
+                        <span class="skill-tag">Walk-Forward Validation</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">Railway</span>
+                        <span class="skill-tag">Claude API</span>
+                        <span class="skill-tag">MCP</span>
+                        <span class="skill-tag">Selenium</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                        <span class="skill-tag">Tauri</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education</h2>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <h3>King's College London</h3>
+                    <p class="education-meta">BSc Computer Science | Sept 2023 – June 2026</p>
+                    <div class="education-details">
+                        <span><strong>Average:</strong> First-Class (80%)</span>
+                        <span><strong>Societies:</strong> KCL Tech, KCL Football</span>
+                        <span><strong>Focus:</strong> AI, Machine Learning, Software Engineering</span>
+                    </div>
+                </div>
+
+                <div class="education-card">
+                    <h3>St Dominic's International School, Portugal</h3>
+                    <p class="education-meta">International Baccalaureate | Sept 2021 – July 2023</p>
+                    <div class="education-details">
+                        <span><strong>Score:</strong> 38/45</span>
+                        <span><strong>Higher Level:</strong> Physics (7), Mathematics AA (6), Economics (7)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="certifications">
+                <h3>Certifications</h3>
+                <div class="cert-grid">
+                    <div class="cert-item">
+                        <strong>Data Scientist</strong><br>
+                        <small>DataCamp (2025)</small>
+                    </div>
+                    <div class="cert-item">
+                        <strong>Machine Learning Specialisation</strong><br>
+                        <small>DeepLearning.AI (2024)</small>
+                    </div>
+                    <div class="cert-item">
+                        <strong>BCG Data Science Job Simulation</strong><br>
+                        <small>Forage (2025)</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact</h2>
+            </div>
+            <p class="contact-intro">Open to data science, ML engineering, and software engineering opportunities.</p>
+            <div class="contact-links">
+                <a href="https://github.com/bernardoguterres" target="_blank" class="contact-link">
+                    <div>
+                        <strong>GitHub</strong><br>
+                        <span>@bernardoguterres</span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/bernardoguterres/" target="_blank" class="contact-link">
+                    <div>
+                        <strong>LinkedIn</strong><br>
+                        <span>/in/bernardoguterres</span>
+                    </div>
+                </a>
+                <a href="mailto:bernardomloguterres@gmail.com" class="contact-link">
+                    <div>
+                        <strong>Email</strong><br>
+                        <span>bernardomloguterres@gmail.com</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Bernardo Guterres. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile nav when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section:not(#hero)').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Neural Network Canvas Animation
+        const canvas = document.getElementById('networkCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height, nodes = [], edges = [], mouse = { x: 0, y: 0 };
+
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            width = container.offsetWidth;
+            height = container.offsetHeight;
+            canvas.width = width;
+            canvas.height = height;
+            initNetwork();
+        }
+
+        class Node {
+            constructor(x, y, label, isCenter = false, projectId = null) {
+                this.x = x;
+                this.y = y;
+                this.baseX = x;
+                this.baseY = y;
+                this.label = label;
+                this.radius = isCenter ? 8 : 5;
+                this.isCenter = isCenter;
+                this.projectId = projectId;
+                this.vx = (Math.random() - 0.5) * 0.3;
+                this.vy = (Math.random() - 0.5) * 0.3;
+                this.hovered = false;
+            }
+
+            update() {
+                // Gentle floating motion
+                this.x += this.vx;
+                this.y += this.vy;
+
+                // Constrain to area around base position
+                const maxDrift = 15;
+                if (Math.abs(this.x - this.baseX) > maxDrift || Math.abs(this.y - this.baseY) > maxDrift) {
+                    this.vx *= -1;
+                    this.vy *= -1;
+                }
+
+                // Mouse interaction
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < 80) {
+                    this.hovered = true;
+                    const force = (80 - dist) / 80;
+                    this.x -= dx * force * 0.03;
+                    this.y -= dy * force * 0.03;
+                } else {
+                    this.hovered = false;
+                }
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = this.hovered ? '#3b82f6' : (this.isCenter ? '#3b82f6' : '#525252');
+                ctx.fill();
+
+                if (this.isCenter || this.hovered) {
+                    ctx.fillStyle = '#fafafa';
+                    ctx.font = this.isCenter ? '600 13px Inter' : '500 11px Inter';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'middle';
+                    ctx.fillText(this.label, this.x, this.y - this.radius - 12);
+                }
+            }
+
+            contains(x, y) {
+                const dx = x - this.x;
+                const dy = y - this.y;
+                return Math.sqrt(dx * dx + dy * dy) < this.radius + 5;
+            }
+        }
+
+        function initNetwork() {
+            nodes = [];
+            edges = [];
+
+            const centerX = width / 2;
+            const centerY = height / 2;
+            const radius = Math.min(width, height) * 0.3;
+
+            // Center node
+            const center = new Node(centerX, centerY, 'Bernardo', true);
+            nodes.push(center);
+
+            // Surrounding nodes
+            const labels = [
+                { name: 'AlphaLab', id: 'AlphaLab' },
+                { name: 'AlphaLive', id: 'AlphaLive' },
+                { name: 'NBA MVP', id: 'NBA' },
+                { name: 'Machine Learning', id: null },
+                { name: 'Data Science', id: null },
+                { name: 'Full-Stack', id: null },
+                { name: 'Python', id: null },
+                { name: 'Quant', id: null }
+            ];
+
+            labels.forEach((item, i) => {
+                const angle = (i / labels.length) * Math.PI * 2;
+                const x = centerX + Math.cos(angle) * radius;
+                const y = centerY + Math.sin(angle) * radius;
+                const node = new Node(x, y, item.name, false, item.id);
+                nodes.push(node);
+                edges.push({ from: center, to: node });
+            });
+        }
+
+        function drawEdges() {
+            edges.forEach(edge => {
+                const alpha = edge.to.hovered || edge.from.hovered ? 0.6 : 0.15;
+                ctx.beginPath();
+                ctx.moveTo(edge.from.x, edge.from.y);
+                ctx.lineTo(edge.to.x, edge.to.y);
+                ctx.strokeStyle = `rgba(59, 130, 246, ${alpha})`;
+                ctx.lineWidth = edge.to.hovered ? 2 : 1;
+                ctx.stroke();
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            nodes.forEach(node => node.update());
+            drawEdges();
+            nodes.forEach(node => node.draw());
+
+            requestAnimationFrame(animate);
+        }
+
+        // Mouse tracking
+        canvas.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+
+        canvas.addEventListener('mouseleave', () => {
+            mouse.x = -1000;
+            mouse.y = -1000;
+        });
+
+        // Click to scroll to project
+        canvas.addEventListener('click', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            nodes.forEach(node => {
+                if (node.contains(x, y) && node.projectId) {
+                    const projectCard = document.querySelector(`[data-project="${node.projectId}"]`);
+                    if (projectCard) {
+                        projectCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+            });
+        });
+
+        // Cursor style
+        canvas.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            let hovering = false;
+            nodes.forEach(node => {
+                if (node.contains(x, y) && node.projectId) {
+                    hovering = true;
+                }
+            });
+
+            canvas.style.cursor = hovering ? 'pointer' : 'default';
+        });
+
+        // Initialize and start
+        if (window.innerWidth > 768) {
+            resizeCanvas();
+            animate();
+            window.addEventListener('resize', resizeCanvas);
+        }
+    </script>
+</body>
+</html>
