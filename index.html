@@ -779,15 +779,32 @@
                 <div class="project-card" data-project="AlphaLive">
                     <h3>AlphaLive</h3>
                     <p class="project-summary">24/7 live trading execution engine that deploys strategies exported from AlphaLab into automated market operation.</p>
-                    <p class="project-description">Production trading bot deployed on Railway. Replicates AlphaLab strategy logic exactly — 8 strategies including MA Crossover, RSI Mean Reversion, Momentum Breakout, Bollinger Breakout, VWAP Reversion, Trend Adaptive RSI, Bollinger RSI Combo, and GreenblattWeekly (Greenblatt Magic Formula, weekly bars). Includes multi-layer risk management (stop loss, take profit, trailing stop, daily loss limits, circuit breakers), real-time Alpaca Markets execution, Telegram trade alerts, multi-strategy parallel execution, and a real-time web dashboard with live P&L charts, position tracking, and kill switch.</p>
+                    <p class="project-description">Production trading bot deployed on Railway. Replicates AlphaLab strategy logic exactly across 8 strategies. Pre-execution gate runs DeepLOB (LOB direction prediction) and AlphaSignal (sentiment) concurrently via asyncio.gather before every order — both must pass, either fails open on timeout. Multi-layer risk management: stop loss, take profit, trailing stop, daily loss limits, consecutive-loss circuit breakers. Real-time Alpaca Markets execution, Telegram trade alerts, multi-strategy parallel execution, and a FastAPI/WebSocket dashboard with live P&L charts, position tracking, and kill switch.</p>
                     <div class="project-stack">
                         <span class="tech-tag">Python</span>
+                        <span class="tech-tag">FastAPI</span>
                         <span class="tech-tag">Alpaca Markets API</span>
                         <span class="tech-tag">Telegram Bot API</span>
                         <span class="tech-tag">Railway</span>
                     </div>
-                    <div class="project-result">8 strategies · real-time web dashboard · circuit breakers, position reconciliation, kill switch, graceful degradation</div>
+                    <div class="project-result">8 strategies · DeepLOB + AlphaSignal concurrent execution gate · real-time dashboard · circuit breakers, kill switch</div>
                     <a href="https://github.com/bernardoguterres/AlphaLive" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+
+                <!-- DeepLOB -->
+                <div class="project-card" data-project="DeepLOB">
+                    <h3>DeepLOB</h3>
+                    <p class="project-summary">PyTorch reimplementation of DeepLOB (Zhang et al. 2019) — mid-price movement prediction from limit order books, deployed as a REST execution timing filter in AlphaLive.</p>
+                    <p class="project-description">CNN + Inception + LSTM architecture trained on FI-2010 (5 Finnish stocks, 10 trading days). The 1×2 CNN kernel explicitly pairs each price level with its volume column — a structural inductive bias from the paper. Achieves 0.78 macro F1 at k=5, matching the paper within 0.1%. Integrated Gradients and SHAP explainability identify ask-side volume at L1 as the dominant predictor (8.9% IG attribution); volume features account for 83.9% of total attribution vs 16.1% for price. Ablation study isolates the LSTM as the load-bearing component — removing it drops F1 by 28.7%. Packaged as a FastAPI inference server queried by AlphaLive before each trade.</p>
+                    <div class="project-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">scikit-learn</span>
+                        <span class="tech-tag">SHAP</span>
+                    </div>
+                    <div class="project-result">0.78 macro F1 (k=5) · Integrated Gradients + SHAP · ablation study · REST inference server integrated into AlphaLive</div>
+                    <a href="https://github.com/bernardoguterres/DeepLOB" target="_blank" class="project-link">View on GitHub →</a>
                 </div>
 
                 <!-- XAI Thesis -->
@@ -847,7 +864,9 @@
                     <h3>ML / Data</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Deep Learning</span>
                         <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">CNN / LSTM</span>
                         <span class="skill-tag">Scikit-learn</span>
                         <span class="skill-tag">XGBoost</span>
                         <span class="skill-tag">SHAP</span>
@@ -1149,6 +1168,7 @@
                 { name: 'AlphaSignal', id: 'AlphaSignal' },
                 { name: 'AlphaLab', id: 'AlphaLab' },
                 { name: 'AlphaLive', id: 'AlphaLive' },
+                { name: 'DeepLOB', id: 'DeepLOB' },
                 { name: 'XAI Thesis', id: 'XAI' },
                 { name: 'NBA MVP', id: 'NBA' },
                 { name: 'Machine Learning', id: null },
