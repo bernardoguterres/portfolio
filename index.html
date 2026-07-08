@@ -671,7 +671,7 @@
                 <h2>About</h2>
             </div>
             <div class="about-content">
-                <p>Computer Science graduate from King's College London (First-Class, 77% average), incoming MSc Data Science & Machine Learning at UCL. I build end-to-end quantitative systems — backtesting platforms, live execution engines, financial RAG pipelines, and explainable AI frameworks for regulated finance. My thesis on XAI for dimensionality reduction in finance is pending publication. Incoming KCL Research Fellow building an agentic LLM assistant for the Bank of England's product-mix auction mechanism. Outside of code, I play volleyball and football.</p>
+                <p>Computer Science graduate from King's College London (First-Class, 77% average), incoming MSc Data Science & Machine Learning at UCL. I build end-to-end quantitative systems - backtesting platforms, live execution engines, financial RAG pipelines, and explainable AI frameworks for regulated finance. My thesis on XAI for dimensionality reduction in finance is pending publication. Incoming KCL Research Fellow building an agentic LLM assistant for the Bank of England's product-mix auction mechanism. Outside of code, I play volleyball and football.</p>
             </div>
         </div>
     </section>
@@ -685,7 +685,7 @@
             <div class="experience-grid">
                 <div class="experience-card" style="border-color: var(--accent);">
                     <div class="experience-header">
-                        <h3>KCL Research Fellow — Bank of England Auction AI</h3>
+                        <h3>KCL Research Fellow - Bank of England Auction AI</h3>
                         <div class="experience-meta">
                             <span class="company">King's College London · Informatics</span>
                             <span>•</span>
@@ -693,7 +693,7 @@
                         </div>
                     </div>
                     <ul>
-                        <li>Building an agentic LLM assistant integrated into a live web simulator for the Bank of England's product-mix auction mechanism — used in sovereign debt, carbon trading, and central bank operations</li>
+                        <li>Building an agentic LLM assistant integrated into a live web simulator for the Bank of England's product-mix auction mechanism - used in sovereign debt, carbon trading, and central bank operations</li>
                         <li>Designing a tool-augmented pipeline with RAG over auction documentation, real-time simulator state access, and code execution to ground model answers in verified computation rather than fluent approximation</li>
                         <li>Supervised by Dr Edwin Lock and Dr Hanqi Yan · Target: publication</li>
                     </ul>
@@ -709,7 +709,7 @@
                         </div>
                     </div>
                     <ul>
-                        <li>Architected LACE (Legacy Application Code Enhancement) — an enterprise AI platform for Oracle PL/SQL modernisation using Next.js, React, and the Claude Sonnet API</li>
+                        <li>Architected LACE (Legacy Application Code Enhancement) - an enterprise AI platform for Oracle PL/SQL modernisation using Next.js, React, and the Claude Sonnet API</li>
                         <li>Built a dual-architecture system with smart context loading and MCP server integration, delivering 10 specialised analysis commands for database migration workflows</li>
                         <li>Engineered real-time streaming with SSE responses, drag-and-drop file processing, and interactive Mermaid diagram generation for data lineage visualisation</li>
                         <li>Delivered a production-ready solution supporting enterprise-scale PL/SQL codebases with comprehensive error handling and export capabilities</li>
@@ -745,7 +745,7 @@
                 <div class="project-card" data-project="AlphaSignal">
                     <h3>AlphaSignal</h3>
                     <p class="project-summary">Production-grade financial RAG system that ingests SEC filings and news, then answers questions with citations and extracts sentiment signals for backtesting.</p>
-                    <p class="project-description">Ingests SEC EDGAR filings (10-K, 10-Q) and financial news, chunks documents semantically, stores embeddings in FAISS, and retrieves context using hybrid search (BM25 + dense retrieval with cross-encoder reranking). Generates answers with GPT-4o-mini and citations. Extracts sentiment signals from financial documents and exposes them via FastAPI REST API for integration with AlphaLab backtesting strategies.</p>
+                    <p class="project-description">Ingests SEC EDGAR filings (10-K, 10-Q) and financial news, chunks documents semantically, stores embeddings in FAISS, and retrieves context using hybrid search (BM25 + dense retrieval with cross-encoder reranking). Generates answers with GPT-4o-mini and citations. Extracts sentiment signals from financial documents and exposes them via a FastAPI REST API, consumed by AlphaLive's pre-execution sentiment gate.</p>
                     <div class="project-stack">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">FastAPI</span>
@@ -754,7 +754,7 @@
                         <span class="tech-tag">SQLite</span>
                         <span class="tech-tag">BM25</span>
                     </div>
-                    <div class="project-result">Hybrid retrieval (BM25 + dense), cross-encoder reranking, sentiment extraction with caching, 50 Q&A golden set evaluation</div>
+                    <div class="project-result">150 tests, 92% coverage · hybrid retrieval (BM25 + dense) with cross-encoder reranking · 50 Q&A golden set evaluation</div>
                     <a href="https://github.com/bernardoguterres/AlphaSignal" target="_blank" class="project-link">View on GitHub →</a>
                 </div>
 
@@ -762,7 +762,7 @@
                 <div class="project-card" data-project="AlphaLab">
                     <h3>AlphaLab</h3>
                     <p class="project-summary">Desktop application for backtesting algorithmic trading strategies with institutional-quality execution simulation.</p>
-                    <p class="project-description">Production-grade backtesting with realistic execution modelling — next-bar execution, configurable slippage and commissions, no look-ahead bias. 8 built-in strategies, 50+ technical indicators, 30+ performance metrics, Monte Carlo simulation, walk-forward validation, and portfolio optimisation. Exports strategies directly to AlphaLive for live deployment.</p>
+                    <p class="project-description">Production-grade backtesting with realistic execution modelling - next-bar execution, configurable slippage and commissions, no look-ahead bias. 8 built-in strategies, 50+ technical indicators, 30+ performance metrics, Monte Carlo simulation, walk-forward validation, and portfolio optimisation. Includes a Greenblatt Magic Formula fundamental screener for weekly value-strategy candidates. Exports strategies directly to AlphaLive for live deployment.</p>
                     <div class="project-stack">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Flask</span>
@@ -770,7 +770,7 @@
                         <span class="tech-tag">TypeScript</span>
                         <span class="tech-tag">Tauri</span>
                     </div>
-                    <div class="project-result">233 passing tests · 8 strategies · native desktop app under 10MB (macOS/Windows/Linux)</div>
+                    <div class="project-result">290/293 tests passing, 91% coverage · 8 strategies · native desktop app under 10MB (macOS/Windows/Linux)</div>
                     <a href="https://github.com/bernardoguterres/AlphaLab" target="_blank" class="project-link">View on GitHub →</a>
                 </div>
 
@@ -778,7 +778,7 @@
                 <div class="project-card" data-project="AlphaLive">
                     <h3>AlphaLive</h3>
                     <p class="project-summary">24/7 live trading execution engine that deploys strategies exported from AlphaLab into automated market operation.</p>
-                    <p class="project-description">Production trading bot deployed on Railway. Replicates AlphaLab strategy logic exactly across 8 strategies. Pre-execution gate runs DeepLOB (LOB direction prediction) and AlphaSignal (sentiment) concurrently via asyncio.gather before every order — both must pass, either fails open on timeout. Multi-layer risk management: stop loss, take profit, trailing stop, daily loss limits, consecutive-loss circuit breakers. Real-time Alpaca Markets execution, Telegram trade alerts, multi-strategy parallel execution, and a FastAPI/WebSocket dashboard with live P&L charts, position tracking, and kill switch.</p>
+                    <p class="project-description">Production trading bot deployed on Railway. Replicates AlphaLab strategy logic exactly across 8 strategies. A pre-execution gate calls AlphaSignal's sentiment endpoint before every order, suppressing entries on strongly negative sentiment - fails open if the service is unreachable. Multi-layer risk management: stop loss, take profit, trailing stop, daily loss limits, consecutive-loss circuit breakers. Real-time Alpaca Markets execution, Telegram trade alerts, multi-strategy parallel execution, and a FastAPI/WebSocket dashboard with live P&L charts, position tracking, and kill switch.</p>
                     <div class="project-stack">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">FastAPI</span>
@@ -786,30 +786,14 @@
                         <span class="tech-tag">Telegram Bot API</span>
                         <span class="tech-tag">Railway</span>
                     </div>
-                    <div class="project-result">8 strategies · DeepLOB + AlphaSignal concurrent execution gate · real-time dashboard · circuit breakers, kill switch</div>
+                    <div class="project-result">460 tests, 91% coverage · 8 strategies · AlphaSignal sentiment gate · real-time dashboard · circuit breakers, kill switch</div>
                     <a href="https://github.com/bernardoguterres/AlphaLive" target="_blank" class="project-link">View on GitHub →</a>
-                </div>
-
-                <!-- DeepLOB -->
-                <div class="project-card" data-project="DeepLOB">
-                    <h3>DeepLOB</h3>
-                    <p class="project-summary">PyTorch reimplementation of DeepLOB (Zhang et al. 2019) — mid-price movement prediction from limit order books, deployed as a REST execution timing filter in AlphaLive.</p>
-                    <p class="project-description">CNN + Inception + LSTM architecture trained on FI-2010 (5 Finnish stocks, 10 trading days). The 1×2 CNN kernel explicitly pairs each price level with its volume column — a structural inductive bias from the paper. Achieves 0.78 macro F1 at k=5, matching the paper within 0.1%. Integrated Gradients and SHAP explainability identify ask-side volume at L1 as the dominant predictor (8.9% IG attribution); volume features account for 83.9% of total attribution vs 16.1% for price. Ablation study isolates the LSTM as the load-bearing component — removing it drops F1 by 28.7%. Packaged as a FastAPI inference server queried by AlphaLive before each trade.</p>
-                    <div class="project-stack">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">PyTorch</span>
-                        <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">scikit-learn</span>
-                        <span class="tech-tag">SHAP</span>
-                    </div>
-                    <div class="project-result">0.78 macro F1 (k=5) · Integrated Gradients + SHAP · ablation study · REST inference server integrated into AlphaLive</div>
-                    <a href="https://github.com/bernardoguterres/DeepLOB" target="_blank" class="project-link">View on GitHub →</a>
                 </div>
 
                 <!-- XAI Thesis -->
                 <div class="project-card" data-project="XAI">
                     <h3>XAI Framework for DR in Regulated Finance</h3>
-                    <p class="project-summary">Bachelor's thesis — explainability framework that converts continuous SHAP attributions into regulatory-grade IF-THEN rules for finance.</p>
+                    <p class="project-summary">Bachelor's thesis - explainability framework that converts continuous SHAP attributions into regulatory-grade IF-THEN rules for finance.</p>
                     <p class="project-description">Addresses the "discrete logic gap": existing DR explanation methods produce continuous attributions, but regulators require categorical IF-THEN rules. Implements 6 dimensionality reduction methods (PCA, ICA, NMF, t-SNE, UMAP, β-TCVAE), 5 XAI techniques (ClusterShapley, Integrated Gradients, sparse autoencoders, probing classifiers, surrogate models), and a four-strategy threshold discretisation framework. Evaluated on a 13-feature credit risk case study under Fama-French calibrated noise regimes. EBA, ECB, and SR 11-7 compliant.</p>
                     <div class="project-stack">
                         <span class="tech-tag">Python</span>
@@ -827,7 +811,7 @@
                 <div class="project-card" data-project="NBA">
                     <h3>NBA MVP Predictor</h3>
                     <p class="project-summary">ML ranking pipeline forecasting NBA MVP vote shares across 34 seasons using a time-aware rolling backtest with strict no-leakage constraints.</p>
-                    <p class="project-description">Treats MVP prediction as a ranking problem rather than regression. Engineers 52 features across 7 categories — era-normalised ratios, league-relative z-scores, team success signals, player availability, and narrative/history features — to mirror actual voter behaviour. Trains Ridge Regression, Random Forest, and XGBoost with a time-aware rolling backtest (train on all years &lt; Y, test on Y). SHAP analysis identifies era-normalised scoring ratio and team win percentage as the strongest predictors of MVP vote share.</p>
+                    <p class="project-description">Treats MVP prediction as a ranking problem rather than regression. Engineers 52 features across 7 categories - era-normalised ratios, league-relative z-scores, team success signals, player availability, and narrative/history features - to mirror actual voter behaviour. Trains Ridge Regression, Random Forest, and XGBoost with a time-aware rolling backtest (train on all years &lt; Y, test on Y). SHAP analysis identifies era-normalised scoring ratio and team win percentage as the strongest predictors of MVP vote share.</p>
                     <div class="project-stack">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Scikit-learn</span>
@@ -865,7 +849,6 @@
                         <span class="skill-tag">Machine Learning</span>
                         <span class="skill-tag">Deep Learning</span>
                         <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">CNN / LSTM</span>
                         <span class="skill-tag">Scikit-learn</span>
                         <span class="skill-tag">XGBoost</span>
                         <span class="skill-tag">SHAP</span>
@@ -946,7 +929,7 @@
                     <div class="education-details">
                         <span><strong>Average:</strong> First-Class (77%)</span>
                         <span><strong>Societies:</strong> KCL Tech, KCL Volleyball, KCL Football</span>
-                        <span><strong>Achievement:</strong> Bloomberg BPuzzled Competition — qualified for Global Finals (2023/24)</span>
+                        <span><strong>Achievement:</strong> Bloomberg BPuzzled Competition - qualified for Global Finals (2023/24)</span>
                         <span><strong>Focus:</strong> AI, Machine Learning, Software Engineering</span>
                     </div>
                 </div>
@@ -1167,7 +1150,6 @@
                 { name: 'AlphaSignal', id: 'AlphaSignal' },
                 { name: 'AlphaLab', id: 'AlphaLab' },
                 { name: 'AlphaLive', id: 'AlphaLive' },
-                { name: 'DeepLOB', id: 'DeepLOB' },
                 { name: 'XAI Thesis', id: 'XAI' },
                 { name: 'NBA MVP', id: 'NBA' },
                 { name: 'Machine Learning', id: null },
