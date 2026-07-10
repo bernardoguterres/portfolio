@@ -754,23 +754,24 @@
                         <span class="tech-tag">SQLite</span>
                         <span class="tech-tag">BM25</span>
                     </div>
-                    <div class="project-result">150 tests, 92% coverage · hybrid retrieval (BM25 + dense) with cross-encoder reranking · 50 Q&A golden set evaluation</div>
+                    <div class="project-result">152 tests, 92% coverage · hybrid retrieval (BM25 + dense) with cross-encoder reranking · 50 Q&A golden set evaluation</div>
                     <a href="https://github.com/bernardoguterres/AlphaSignal" target="_blank" class="project-link">View on GitHub →</a>
                 </div>
 
                 <!-- AlphaLab -->
                 <div class="project-card" data-project="AlphaLab">
                     <h3>AlphaLab</h3>
-                    <p class="project-summary">Desktop application for backtesting algorithmic trading strategies with institutional-quality execution simulation.</p>
-                    <p class="project-description">Production-grade backtesting with realistic execution modelling - next-bar execution, configurable slippage and commissions, no look-ahead bias. 8 built-in strategies, 50+ technical indicators, 30+ performance metrics, Monte Carlo simulation, walk-forward validation, and portfolio optimisation. Includes a Greenblatt Magic Formula fundamental screener for weekly value-strategy candidates. Exports strategies directly to AlphaLive for live deployment.</p>
+                    <p class="project-summary">Web application for backtesting algorithmic trading strategies with institutional-quality execution simulation.</p>
+                    <p class="project-description">Production-grade backtesting with realistic execution modelling - next-bar execution, configurable slippage and commissions, no look-ahead bias. 8 built-in strategies, technical indicators (SMA, RSI, ADX, Bollinger Bands, ATR), 30+ performance metrics, Monte Carlo simulation, walk-forward validation, and portfolio optimisation. Includes a Greenblatt Magic Formula fundamental screener for weekly value-strategy candidates. Exports strategies directly to AlphaLive for live deployment.</p>
                     <div class="project-stack">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Flask</span>
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Railway</span>
                         <span class="tech-tag">Tauri</span>
                     </div>
-                    <div class="project-result">290/293 tests passing, 91% coverage · 8 strategies · native desktop app under 10MB (macOS/Windows/Linux)</div>
+                    <div class="project-result">289/292 tests passing, 91% coverage · 8 strategies · deployable to Railway (also an optional native desktop build)</div>
                     <a href="https://github.com/bernardoguterres/AlphaLab" target="_blank" class="project-link">View on GitHub →</a>
                 </div>
 
@@ -778,7 +779,7 @@
                 <div class="project-card" data-project="AlphaLive">
                     <h3>AlphaLive</h3>
                     <p class="project-summary">24/7 live trading execution engine that deploys strategies exported from AlphaLab into automated market operation.</p>
-                    <p class="project-description">Production trading bot deployed on Railway. Replicates AlphaLab strategy logic exactly across 8 strategies. A pre-execution gate calls AlphaSignal's sentiment endpoint before every order, suppressing entries on strongly negative sentiment - fails open if the service is unreachable. Multi-layer risk management: stop loss, take profit, trailing stop, daily loss limits, consecutive-loss circuit breakers. Real-time Alpaca Markets execution, Telegram trade alerts, multi-strategy parallel execution, and a FastAPI/WebSocket dashboard with live P&L charts, position tracking, and kill switch.</p>
+                    <p class="project-description">Production trading bot, deployable to Railway. Replicates AlphaLab strategy logic exactly across 8 strategies. A pre-execution gate calls AlphaSignal's sentiment endpoint before every order, suppressing entries on strongly negative sentiment - fails open if the service is unreachable. Multi-layer risk management: stop loss, take profit, trailing stop, daily loss limits, consecutive-loss circuit breakers. Real-time Alpaca Markets execution, Telegram trade alerts, multi-strategy parallel execution, and a FastAPI/WebSocket dashboard with live P&L charts, position tracking, and kill switch.</p>
                     <div class="project-stack">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">FastAPI</span>
@@ -786,7 +787,7 @@
                         <span class="tech-tag">Telegram Bot API</span>
                         <span class="tech-tag">Railway</span>
                     </div>
-                    <div class="project-result">460 tests, 91% coverage · 8 strategies · AlphaSignal sentiment gate · real-time dashboard · circuit breakers, kill switch</div>
+                    <div class="project-result">465 tests, 91% coverage · 8 strategies · AlphaSignal sentiment gate · real-time dashboard · circuit breakers, kill switch</div>
                     <a href="https://github.com/bernardoguterres/AlphaLive" target="_blank" class="project-link">View on GitHub →</a>
                 </div>
 
